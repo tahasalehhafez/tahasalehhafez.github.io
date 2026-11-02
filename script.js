@@ -123,14 +123,4 @@ if (!isTouch) {
     });
   });
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      const photo = document.querySelector(".hero-photo");
-      if (!photo) return;
-      const offset = Math.min(window.scrollY * 0.12, 80);
-      photo.style.transform = `scale(1) translateY(${offset}px)`;
-    },
-    { passive: true }
-  );
 }
