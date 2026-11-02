@@ -1,14 +1,8 @@
 document.getElementById("year").textContent = String(new Date().getFullYear());
 
-const isTouch = matchMedia("(hover: none), (pointer: coarse)").matches;
-if (isTouch) document.body.classList.add("touch");
-
 const header = document.querySelector(".site-header");
 const progress = document.querySelector(".progress");
-const hero = document.querySelector(".hero");
 const timeline = document.querySelector(".timeline");
-
-requestAnimationFrame(() => hero?.classList.add("is-in"));
 
 window.addEventListener(
   "scroll",
@@ -30,12 +24,12 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
 );
 
 document.querySelectorAll(".reveal").forEach((el) => {
   const rect = el.getBoundingClientRect();
-  if (rect.top < window.innerHeight * 0.92) {
+  if (rect.top < window.innerHeight * 0.95) {
     el.classList.add("visible");
   } else {
     revealObserver.observe(el);
@@ -81,53 +75,15 @@ const countObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(el));
 
-if (!isTouch) {
-  const cursor = document.querySelector(".cursor");
-  const ring = document.querySelector(".cursor-ring");
-  let mouseX = 0;
-  let mouseY = 0;
-  let ringX = 0;
-  let ringY = 0;
-
-  window.addEventListener(
-    "mousemove",
-    (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-    },
-    { passive: true }
-  );
-
-  const animateRing = () => {
-    ringX += (mouseX - ringX) * 0.18;
-    ringY += (mouseY - ringY) * 0.18;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateRing);
-  };
-  animateRing();
-
-  document.querySelectorAll("a, button").forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      cursor.classList.add("active");
-      ring.classList.add("active");
-    });
-    el.addEventListener("mouseleave", () => {
-      cursor.classList.remove("active");
-      ring.classList.remove("active");
-    });
+document.querySelectorAll("[data-magnetic]").forEach((el) => {
+  if (matchMedia("(hover: none), (pointer: coarse)").matches) return;
+  el.addEventListener("mousemove", (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    el.style.transform = `translate(${x * 0.15}px, ${y * 0.18}px)`;
   });
-
-  document.querySelectorAll("[data-magnetic]").forEach((el) => {
-    el.addEventListener("mousemove", (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      el.style.transform = `translate(${x * 0.18}px, ${y * 0.22}px)`;
-    });
-    el.addEventListener("mouseleave", () => {
-      el.style.transform = "translate(0, 0)";
-    });
+  el.addEventListener("mouseleave", () => {
+    el.style.transform = "translate(0, 0)";
   });
-
-}
+});
