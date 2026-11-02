@@ -6,6 +6,7 @@ const progress = document.getElementById("progress");
 window.addEventListener(
   "scroll",
   () => {
+    if (!progress || !header) return;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = `${max > 0 ? Math.min((window.scrollY / max) * 100, 100) : 0}%`;
     header.classList.toggle("scrolled", window.scrollY > 12);
@@ -13,11 +14,9 @@ window.addEventListener(
   { passive: true }
 );
 
-/* ——— SmartChat → WhatsApp / Call ——— */
-(() => {
+/* SmartChat → WhatsApp / Call */
+(function initSmartChat() {
   const WHATSAPP = "966592522700";
-  const PHONE = "+966592522700";
-
   const root = document.getElementById("smartchat");
   const panel = document.getElementById("smartchatPanel");
   const body = document.getElementById("smartchatBody");
@@ -26,17 +25,21 @@ window.addEventListener(
   const input = document.getElementById("smartchatInput");
   const openBtn = document.getElementById("smartchatOpen");
   const closeBtn = document.getElementById("smartchatClose");
+  const waDirect = document.getElementById("smartchatWaDirect");
 
-  if (!root || !panel) return;
+  if (!root || !panel || !openBtn || !closeBtn || !body || !quick || !form || !input) {
+    console.warn("SmartChat: missing DOM nodes");
+    return;
+  }
 
   let started = false;
-  let topic = "";
+  let topic = "General inquiry";
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   function openChat() {
-    panel.hidden = false;
     root.classList.add("is-open");
+    panel.setAttribute("aria-hidden", "false");
     if (!started) {
       started = true;
       boot();
@@ -44,8 +47,8 @@ window.addEventListener(
   }
 
   function closeChat() {
-    panel.hidden = true;
     root.classList.remove("is-open");
+    panel.setAttribute("aria-hidden", "true");
   }
 
   function addBot(text) {
@@ -64,7 +67,7 @@ window.addEventListener(
     body.scrollTop = body.scrollHeight;
   }
 
-  async function typing(ms = 700) {
+  async function typing(ms = 650) {
     const el = document.createElement("div");
     el.className = "sc-typing";
     el.innerHTML = "<span></span><span></span><span></span>";
@@ -86,17 +89,20 @@ window.addEventListener(
     });
   }
 
-  function waUrl(message) {
-    return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+  function waMessage(extra) {
+    return `Hi Taha — I contacted you via your portfolio SmartChat.\nTopic: ${extra || topic}`;
   }
 
   function openWhatsApp(message) {
-    window.open(waUrl(message), "_blank", "noopener");
+    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+    if (waDirect) waDirect.href = url;
+    window.open(url, "_blank", "noopener");
   }
 
   async function boot() {
-    await typing(500);
-    addBot("Hi — I’m Taha’s SmartChat assistant. How can I help you today?");
+    body.innerHTML = "";
+    await typing(450);
+    addBot("Hi — I’m Taha’s SmartChat. I can connect you on WhatsApp or start a call. What do you need?");
     setChips([
       { id: "hire", label: "Hiring / opportunity" },
       { id: "consult", label: "Consulting / architecture" },
@@ -111,54 +117,47 @@ window.addEventListener(
     setChips([]);
     await typing();
 
-    if (item.id === "whatsapp") {
-      topic = "General inquiry";
-      addBot("Perfect. I’ll open WhatsApp so you can message Taha directly.");
-      setChips([
-        { id: "go-wa", label: "Open WhatsApp now" },
-        { id: "menu", label: "Back to menu" },
-      ]);
+    if (item.id === "menu") {
+      started = true;
+      await boot();
       return;
     }
 
-    if (item.id === "call") {
-      topic = "Call request";
-      addBot("You can call Taha now, or continue on WhatsApp with a call request.");
+    if (item.id === "whatsapp" || item.id === "go-wa" || item.id === "go-wa-final") {
+      if (item.id === "whatsapp") topic = "General inquiry";
+      addBot("Opening WhatsApp with your request ready for Taha.");
+      openWhatsApp(waMessage());
       setChips([
-        { id: "go-call", label: "Call now" },
-        { id: "go-wa-call", label: "Request call on WhatsApp" },
-        { id: "menu", label: "Back to menu" },
-      ]);
-      return;
-    }
-
-    if (item.id === "go-wa" || item.id === "go-wa-call" || item.id === "go-wa-final") {
-      const msg =
-        item.id === "go-wa-call"
-          ? "Hi Taha — I’d like to schedule a call via your portfolio SmartChat."
-          : `Hi Taha — I contacted you via your portfolio SmartChat.\nTopic: ${topic || "General inquiry"}`;
-      openWhatsApp(msg);
-      addBot("WhatsApp is opening. If it didn’t, tap again below.");
-      setChips([
-        { id: "go-wa-final", label: "Open WhatsApp" },
+        { id: "go-wa-final", label: "Open WhatsApp again" },
         { id: "go-call", label: "Call instead" },
         { id: "menu", label: "Back to menu" },
       ]);
       return;
     }
 
-    if (item.id === "go-call") {
-      window.location.href = `tel:${PHONE}`;
-      addBot("Dialer opened. Prefer WhatsApp instead?");
+    if (item.id === "call" || item.id === "go-wa-call") {
+      topic = "Call request";
+      if (item.id === "go-wa-call") {
+        addBot("Sending a call request on WhatsApp…");
+        openWhatsApp("Hi Taha — I’d like to schedule a call via your portfolio SmartChat.");
+      } else {
+        addBot("You can call now, or request a call on WhatsApp.");
+      }
       setChips([
+        { id: "go-call", label: "Call now" },
         { id: "go-wa-call", label: "WhatsApp call request" },
         { id: "menu", label: "Back to menu" },
       ]);
       return;
     }
 
-    if (item.id === "menu") {
-      await boot();
+    if (item.id === "go-call") {
+      window.location.href = "tel:+966592522700";
+      addBot("Phone dialer opened. Prefer WhatsApp?");
+      setChips([
+        { id: "go-wa-call", label: "WhatsApp call request" },
+        { id: "menu", label: "Back to menu" },
+      ]);
       return;
     }
 
@@ -168,10 +167,7 @@ window.addEventListener(
       ai: "Cloud / AI project",
     };
     topic = map[item.id] || item.label;
-
-    addBot(
-      `Got it — “${topic}”. I can connect you to Taha on WhatsApp with this context filled in, or start a call.`
-    );
+    addBot(`Got it — “${topic}”. Continue on WhatsApp (recommended) or call directly.`);
     setChips([
       { id: "go-wa-final", label: "Continue on WhatsApp" },
       { id: "go-call", label: "Call now" },
@@ -184,9 +180,7 @@ window.addEventListener(
     setChips([]);
     topic = text.slice(0, 120);
     await typing();
-    addBot(
-      "Thanks. I’ll take you to WhatsApp so Taha can reply personally — or you can call directly."
-    );
+    addBot("Thanks — I’ll open WhatsApp so Taha can reply personally.");
     setChips([
       { id: "go-wa-final", label: "Continue on WhatsApp" },
       { id: "go-call", label: "Call now" },
@@ -194,21 +188,25 @@ window.addEventListener(
     ]);
   }
 
-  openBtn.addEventListener("click", openChat);
-  closeBtn.addEventListener("click", closeChat);
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openChat();
+  });
+
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeChat();
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = input.value.trim();
     if (!text) return;
     input.value = "";
+    if (!root.classList.contains("is-open")) openChat();
     handleFreeText(text);
   });
 
-  // Auto-nudge once after a short delay
-  setTimeout(() => {
-    if (!started && !root.classList.contains("is-open")) {
-      openBtn.classList.add("nudge");
-    }
-  }, 6000);
+  // Expose for debugging / manual open
+  window.SmartChat = { open: openChat, close: closeChat };
 })();

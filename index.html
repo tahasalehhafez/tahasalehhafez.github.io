@@ -263,10 +263,10 @@
           <path d="M8.2 10.2h7.2M8.2 13.1h4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
         </svg>
       </span>
-      <span class="smartchat-label">SmartChat</span>
+      <span class="smartchat-label">Chat · WhatsApp</span>
     </button>
 
-    <section class="smartchat-panel" id="smartchatPanel" hidden aria-label="SmartChat assistant">
+    <section class="smartchat-panel" id="smartchatPanel" aria-label="SmartChat assistant" aria-hidden="true">
       <header class="smartchat-head">
         <div class="smartchat-avatar">
           <img src="photo.jpg" alt="" width="44" height="44" />
@@ -274,26 +274,22 @@
         </div>
         <div>
           <strong>Taha’s SmartChat</strong>
-          <p>Assistant · replies via WhatsApp</p>
+          <p>Assistant · WhatsApp &amp; Call</p>
         </div>
         <button class="smartchat-close" id="smartchatClose" type="button" aria-label="Close chat">×</button>
       </header>
 
       <div class="smartchat-body" id="smartchatBody" role="log" aria-live="polite"></div>
-
       <div class="smartchat-quick" id="smartchatQuick"></div>
 
-      <form class="smartchat-form" id="smartchatForm">
-        <input
-          id="smartchatInput"
-          type="text"
-          maxlength="240"
-          placeholder="Type a message…"
-          autocomplete="off"
-          aria-label="Message"
-        />
-        <button type="submit" aria-label="Send">Send</button>
+      <form class="smartchat-form" id="smartchatForm" action="#" method="get">
+        <input id="smartchatInput" type="text" maxlength="240" placeholder="Type a message…" autocomplete="off" aria-label="Message" />
+        <button type="submit">Send</button>
       </form>
+      <div class="smartchat-footer-actions">
+        <a class="sc-wa" id="smartchatWaDirect" href="https://wa.me/966592522700?text=Hi%20Taha%20%E2%80%94%20I%20found%20you%20via%20your%20portfolio%20SmartChat." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="sc-call" href="tel:+966592522700">Call</a>
+      </div>
     </section>
   </div>
 
