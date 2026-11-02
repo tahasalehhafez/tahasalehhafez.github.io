@@ -12,6 +12,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Critical SmartChat styles (inline so they never fail to apply) */
+    #smartchat {
+      position: fixed !important;
+      right: 1.1rem !important;
+      bottom: 1.1rem !important;
+      z-index: 9999 !important;
+      width: auto !important;
+      height: auto !important;
+    }
+    #smartchat.is-open #smartchatPanel {
+      display: flex !important;
+      position: absolute !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: min(380px, calc(100vw - 1.4rem)) !important;
+      height: min(560px, calc(100vh - 5rem)) !important;
+      flex-direction: column !important;
+      background: #fff !important;
+      border: 1px solid #e4e8e7 !important;
+      border-radius: 22px !important;
+      overflow: hidden !important;
+      box-shadow: 0 30px 80px rgba(11, 15, 16, 0.2) !important;
+    }
+    #smartchatPanel { display: none !important; }
+    #smartchat.is-open .smartchat-launcher {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    #smartchatOpen {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.65rem !important;
+      min-height: 3.4rem !important;
+      padding: 0.7rem 1.05rem 0.7rem 0.85rem !important;
+      border: 0 !important;
+      border-radius: 999px !important;
+      background: linear-gradient(135deg, #0f4c5c, #167a6f) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      box-shadow: 0 18px 40px rgba(15, 76, 92, 0.35) !important;
+    }
+  </style>
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>

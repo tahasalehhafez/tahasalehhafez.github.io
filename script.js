@@ -1,21 +1,24 @@
-document.getElementById("year").textContent = String(new Date().getFullYear());
+(function bootPage() {
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-const header = document.querySelector(".header");
-const progress = document.getElementById("progress");
+  const header = document.querySelector(".header");
+  const progress = document.getElementById("progress");
 
-window.addEventListener(
-  "scroll",
-  () => {
-    if (!progress || !header) return;
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = `${max > 0 ? Math.min((window.scrollY / max) * 100, 100) : 0}%`;
-    header.classList.toggle("scrolled", window.scrollY > 12);
-  },
-  { passive: true }
-);
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!progress || !header) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${max > 0 ? Math.min((window.scrollY / max) * 100, 100) : 0}%`;
+      header.classList.toggle("scrolled", window.scrollY > 12);
+    },
+    { passive: true }
+  );
+})();
 
 /* SmartChat → WhatsApp / Call */
-(function initSmartChat() {
+function initSmartChat() {
   const WHATSAPP = "966592522700";
   const root = document.getElementById("smartchat");
   const panel = document.getElementById("smartchatPanel");
@@ -28,7 +31,17 @@ window.addEventListener(
   const waDirect = document.getElementById("smartchatWaDirect");
 
   if (!root || !panel || !openBtn || !closeBtn || !body || !quick || !form || !input) {
-    console.warn("SmartChat: missing DOM nodes");
+    console.warn("SmartChat: missing DOM nodes", {
+      root: !!root,
+      panel: !!panel,
+      openBtn: !!openBtn,
+      closeBtn: !!closeBtn,
+      body: !!body,
+      quick: !!quick,
+      form: !!form,
+      input: !!input,
+      waDirect: !!waDirect,
+    });
     return;
   }
 
@@ -209,4 +222,10 @@ window.addEventListener(
 
   // Expose for debugging / manual open
   window.SmartChat = { open: openChat, close: closeChat };
-})();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSmartChat);
+} else {
+  initSmartChat();
+}
