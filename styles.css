@@ -1,12 +1,12 @@
 :root {
-  --bg: #f7f5f1;
-  --bg-soft: #ffffff;
+  --bg: #f6f4ef;
+  --paper: #ffffff;
   --ink: #121417;
   --muted: #5d6670;
   --line: rgba(18, 20, 23, 0.1);
   --accent: #0e4a4a;
-  --accent-soft: #d7ebe8;
-  --shadow: 0 24px 60px rgba(18, 20, 23, 0.08);
+  --accent-soft: #d9ece9;
+  --shadow: 0 30px 80px rgba(18, 20, 23, 0.08);
   --display: "Bricolage Grotesque", "Segoe UI", sans-serif;
   --sans: "Sora", "Segoe UI", sans-serif;
   --max: 1180px;
@@ -27,10 +27,7 @@ body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background:
-    radial-gradient(ellipse 80% 50% at 100% -10%, rgba(215, 235, 232, 0.7), transparent 55%),
-    radial-gradient(ellipse 60% 40% at -10% 30%, rgba(247, 245, 241, 1), transparent 50%),
-    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 40%, #f3f1ec 100%);
+  background: var(--bg);
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
@@ -50,6 +47,23 @@ img {
   max-width: 100%;
 }
 
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 55% 45% at 85% 12%, rgba(217, 236, 233, 0.9), transparent 60%),
+    radial-gradient(ellipse 40% 35% at 10% 70%, rgba(255, 255, 255, 0.85), transparent 55%),
+    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 45%, #f1eee7 100%);
+  animation: ambient-shift 16s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-shift {
+  from { filter: saturate(1) hue-rotate(0deg); }
+  to { filter: saturate(1.08) hue-rotate(-6deg); }
+}
+
 .progress {
   position: fixed;
   top: 0;
@@ -58,7 +72,6 @@ img {
   width: 0%;
   z-index: 100;
   background: linear-gradient(90deg, var(--accent), #1f7a72);
-  transform-origin: left center;
 }
 
 .cursor,
@@ -70,7 +83,7 @@ img {
   z-index: 999;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width 0.25s var(--ease), height 0.25s var(--ease), background 0.25s var(--ease), opacity 0.25s var(--ease);
+  transition: width 0.25s var(--ease), height 0.25s var(--ease), background 0.25s ease, opacity 0.25s ease;
 }
 
 .cursor {
@@ -80,15 +93,15 @@ img {
 }
 
 .cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(18, 20, 23, 0.35);
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(18, 20, 23, 0.28);
 }
 
 .cursor.active,
 .cursor-ring.active {
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
 }
 
 .cursor.active {
@@ -107,16 +120,16 @@ body.touch .cursor-ring {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.75rem;
+  padding: 1.15rem clamp(1.25rem, 3vw, 2rem);
   backdrop-filter: blur(16px);
-  background: rgba(251, 250, 247, 0.72);
+  background: rgba(251, 250, 247, 0.7);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .site-header.scrolled {
   border-bottom-color: var(--line);
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .logo {
@@ -129,7 +142,7 @@ body.touch .cursor-ring {
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.45rem;
   font-size: 0.9rem;
   color: var(--muted);
 }
@@ -146,51 +159,21 @@ body.touch .cursor-ring {
 
 .hero {
   min-height: 100vh;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 7.5rem clamp(1.25rem, 3vw, 2rem) 4rem;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: stretch;
-}
-
-.hero-media {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  background: #dfe8e6;
-}
-
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transform: scale(1.06);
-  transition: transform 1.8s var(--ease);
-  will-change: transform;
-}
-
-.hero.is-in .hero-photo {
-  transform: scale(1);
-}
-
-.hero-media-veil {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(247, 245, 241, 0.08), transparent 30%),
-    linear-gradient(0deg, rgba(18, 20, 23, 0.18), transparent 35%);
-  pointer-events: none;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
 }
 
 .hero-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 7.5rem 2.5rem 4.5rem;
-  max-width: 40rem;
+  max-width: 36rem;
 }
 
 .hero-kicker {
-  margin: 0 0 1rem;
+  margin: 0 0 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.72rem;
@@ -201,15 +184,14 @@ body.touch .cursor-ring {
 .hero h1 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(3.4rem, 7vw, 5.8rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-size: clamp(3.8rem, 9vw, 6.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   font-weight: 800;
-  max-width: 8ch;
 }
 
 .hero-lede {
-  margin: 1.4rem 0 0;
+  margin: 1.45rem 0 0;
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
   color: var(--muted);
   font-weight: 300;
@@ -227,7 +209,7 @@ body.touch .cursor-ring {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
+  min-height: 3.05rem;
   padding: 0.85rem 1.35rem;
   font-size: 0.92rem;
   font-weight: 500;
@@ -245,17 +227,67 @@ body.touch .cursor-ring {
 }
 
 .btn-line {
-  border: 1px solid rgba(18, 20, 23, 0.22);
-  background: transparent;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .btn-line:hover {
   border-color: var(--ink);
 }
 
+.hero-portrait {
+  justify-self: end;
+  width: min(100%, 420px);
+}
+
+.portrait-frame {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 42% 58% 48% 52% / 48% 42% 58% 52%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #e7f1ef, #d5e4e1 55%, #c4d5d2);
+  box-shadow: var(--shadow);
+  animation: morph 10s ease-in-out infinite;
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.04);
+  image-rendering: auto;
+  filter: contrast(1.04) saturate(1.05);
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 42% 58% 48% 52% / 48% 42% 58% 52%; }
+  50% { border-radius: 56% 44% 54% 46% / 44% 56% 44% 56%; }
+}
+
+.portrait-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .marquee {
   border-block: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.58);
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -286,7 +318,7 @@ body.touch .cursor-ring {
 .section {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 6rem 1.75rem;
+  padding: 6rem clamp(1.25rem, 3vw, 2rem);
 }
 
 .section-head {
@@ -358,7 +390,6 @@ body.touch .cursor-ring {
 .timeline {
   position: relative;
   display: grid;
-  gap: 0;
 }
 
 .timeline-line {
@@ -526,7 +557,7 @@ body.touch .cursor-ring {
 }
 
 .cred-block {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
   padding: 1.8rem;
 }
@@ -572,8 +603,8 @@ body.touch .cursor-ring {
 
 .contact-shell {
   background:
-    linear-gradient(135deg, rgba(215, 235, 232, 0.55), transparent 45%),
-    #ffffff;
+    linear-gradient(135deg, rgba(217, 236, 233, 0.7), transparent 48%),
+    var(--paper);
   border: 1px solid var(--line);
   padding: clamp(2rem, 5vw, 3.5rem);
   box-shadow: var(--shadow);
@@ -608,7 +639,7 @@ body.touch .cursor-ring {
 .site-footer {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 1.5rem 1.75rem 2.5rem;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem) 2.5rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -646,15 +677,13 @@ body.touch .cursor-ring {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    padding-top: 6.5rem;
   }
 
-  .hero-media {
-    min-height: 62vh;
+  .hero-portrait {
+    justify-self: start;
     order: -1;
-  }
-
-  .hero-copy {
-    padding: 2.5rem 1.5rem 3rem;
+    width: min(100%, 320px);
   }
 
   .intro-grid,
@@ -689,19 +718,12 @@ body.touch .cursor-ring {
     grid-template-columns: 1.2rem 1fr;
   }
 
-  .timeline-when {
-    grid-column: 2;
-  }
-
+  .timeline-when,
   .timeline-body {
     grid-column: 2;
   }
 
   .timeline-line {
     left: 0.45rem;
-  }
-
-  .hero h1 {
-    max-width: none;
   }
 }
