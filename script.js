@@ -33,7 +33,14 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
 );
 
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+document.querySelectorAll(".reveal").forEach((el) => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.92) {
+    el.classList.add("visible");
+  } else {
+    revealObserver.observe(el);
+  }
+});
 
 const timelineObserver = new IntersectionObserver(
   (entries) => {
