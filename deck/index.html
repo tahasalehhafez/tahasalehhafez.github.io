@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taha Abu Alata | Data Architecture Portfolio</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<div id="progress"></div>
+<main id="deck">
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="cover-left">
+    <div class="kicker">Portfolio | Technical Lead and Data Architect</div>
+    <h1>Taha Abu Alata</h1>
+    <p class="lead">I design and build data platforms on Google Cloud. I lead the team, and I write the code too.</p>
+    <div class="badges">
+      <span class="badge g">Google Cloud Professional Cloud Architect</span>
+      <span class="badge g">Google Cloud Generative AI Leader</span>
+      <span class="badge m">Microsoft MCSE Cloud Platform</span>
+      <span class="badge">Google Project Management</span>
+    </div>
+    <div class="cover-meta">
+      <div><span>Based in</span>Riyadh, Saudi Arabia</div>
+      <div><span>Experience</span><b data-count="15">15</b>+ years</div>
+      <div><span>Focus</span>GCP, BigQuery, Customer 360</div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <img src="photo.jpg" alt="Taha Abu Alata">
+    <div class="cover-tag"><i class="live"></i>Design. Build. Lead.</div>
+  </div>
+  <div class="conf-note">No confidential client data. All diagrams are my own. Dashboard numbers are sample data.</div>
+</section>
+
+<!-- 2 AT A GLANCE -->
+<section class="slide">
+  <header><div class="kicker">About me</div><h2>15 years of building platforms for Saudi organisations</h2></header>
+  <div class="stats six">
+    <div class="stat"><b><span data-count="15">15</span>+</b><span>years in cloud, data and platforms</span></div>
+    <div class="stat"><b data-count="81">81</b><span>business applications documented</span></div>
+    <div class="stat"><b><span data-count="50">50</span>+</b><span>government agencies on one platform</span></div>
+    <div class="stat"><b data-count="100">100</b><span>security controls mapped (PDPL, NCA, ISO)</span></div>
+    <div class="stat"><b>5 to 15</b><span>engineers in the teams I led</span></div>
+    <div class="stat"><b><span data-count="1500">1,500</span>+</b><span>engineers trained in 20 countries</span></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-line"></div>
+    <div class="tl-item"><i></i><em>2010 to 2014</em><b>Money Experts</b><span>Finance training platforms, payments, pricing tools</span></div>
+    <div class="tl-item"><i></i><em>2014 to 2019</em><b>Skillsoft and Oracle</b><span>Senior consultant and trainer, Oracle databases</span></div>
+    <div class="tl-item"><i></i><em>2017 to 2018</em><b>Microsoft</b><span>Azure and Microsoft 365 cloud consultant</span></div>
+    <div class="tl-item"><i></i><em>2020 to 2024</em><b>SAMI Advanced Electronics</b><span>Solution Architect and Team Lead</span></div>
+    <div class="tl-item"><i></i><em>2024 to 2026</em><b>Qiddiya</b><span>Google Cloud operations, data and AI</span></div>
+    <div class="tl-item now"><i></i><em>2026 to now</em><b>AI contact centre</b><span>Principal Cloud and AI Architect</span></div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 3 AGENDA -->
+<section class="slide">
+  <header><div class="kicker">Today</div><h2>Four projects, then my plan for your Customer 360</h2></header>
+  <div class="agenda">
+    <div class="ag"><em>01</em><b>Qiddiya: Google Cloud data platform</b><span>BigQuery, Terraform, GKE, Vertex AI and executive dashboards</span><div class="tags"><i>GCP</i><i>BigQuery</i><i>Looker Studio</i><i>Terraform</i></div></div>
+    <div class="ag"><em>02</em><b>SAMI: national government platforms</b><span>One platform for 50+ agencies, shared data model, security</span><div class="tags"><i>Architecture</i><i>APIs</i><i>Data model</i><i>Governance</i></div></div>
+    <div class="ag"><em>03</em><b>Smart contact centre with AI agents</b><span>Voice and chat AI agents, data kept in Saudi Arabia, live KPIs</span><div class="tags"><i>AI agents</i><i>RAG</i><i>Customer data</i><i>KPIs</i></div></div>
+    <div class="ag"><em>04</em><b>Microsoft: many enterprise customers</b><span>Azure, identity, Power BI, Dynamics 365 and Power Platform</span><div class="tags"><i>Azure</i><i>Power BI</i><i>Dynamics 365</i><i>Security</i></div></div>
+    <div class="ag accent"><em>05</em><b>Executive dashboards and pipelines</b><span>Dashboards from many sources, plus Dataflow, Airflow and dbt</span><div class="tags"><i>Dataflow</i><i>Airflow</i><i>dbt</i><i>Checks</i></div></div>
+    <div class="ag accent"><em>06</em><b>Customer 360: my plan</b><span>Design, matching customers, security, 13 weeks, the team</span><div class="tags"><i>Golden record</i><i>PDPL</i><i>D365</i><i>Power BI</i></div></div>
+  </div>
+  <div class="steps-line">
+    <span><b>1</b>The problem</span><span><b>2</b>My role</span><span><b>3</b>How it works</span><span><b>4</b>The hard part</span><span><b>5</b>The result</span><span><b>6</b>What it means for you</span>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 4 QIDDIYA -->
+<section class="slide">
+  <header><div class="kicker">Project 01 | Qiddiya Investment Company | 2024 to 2026</div><h2>Google Cloud platform, data and AI for a giga-project</h2></header>
+  <div class="cols-3">
+    <div class="card">
+      <h4>The problem</h4>
+      <p>Many cloud projects, teams and vendors. Leaders needed one clear answer: what is running, who owns it, what it costs, and is it secure?</p>
+      <h4>My role</h4>
+      <p>Assistant Manager, Cloud Operation. I owned the platform, the automation, the cost data and the internal AI tools. I designed them and built them myself.</p>
+    </div>
+    <div class="card">
+      <h4>What I built</h4>
+      <ul class="ticks">
+        <li>Terraform modules and CI/CD for GKE, Cloud SQL, network and IAM</li>
+        <li>Shared VPC and secure network design</li>
+        <li>Cost data model in <b>BigQuery</b> with <b>Looker Studio</b> dashboards</li>
+        <li>A list of <b>81</b> applications, each with a design and an owner</li>
+        <li>AI assistant with <b>Vertex AI, Gemini and RAG</b> on GKE</li>
+        <li>Monitoring with Prometheus and Grafana</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <h4>Results</h4>
+      <div class="kpi"><b data-count="81">81</b><span>applications documented, each with a clear owner</span></div>
+      <div class="kpi"><b>1</b><span>cost view for leaders, checked against the bill</span></div>
+      <div class="kpi"><b>Live</b><span>AI assistant approved for production</span></div>
+      <div class="kpi"><b>IaC</b><span>every change through code and review</span></div>
+    </div>
+  </div>
+  <div class="callout"><b>Hard part:</b> each team deployed in its own way. <b>What I did:</b> shared Terraform modules, CI/CD and security checks. <b>For you:</b> the same standards from week 1 for a team of 6 to 8.</div>
+  <footer></footer>
+</section>
+
+<!-- 5 QIDDIYA ARCH -->
+<section class="slide">
+  <header><div class="kicker">Project 01 | How it works</div><h2>From raw cloud data to decisions, in 4 steps</h2></header>
+  <div class="flow tight">
+    <div class="lane"><div class="lane-h"><b class="sn">1</b>Collect</div>
+      <div class="node">Cloud billing export</div>
+      <div class="node">Asset list and labels</div>
+      <div class="node">Monitoring metrics</div>
+      <div class="node">Application list (81 apps)</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">2</b>Load</div>
+      <div class="node">Cloud Storage landing</div>
+      <div class="node">Scheduled loads and API pulls (Python)</div>
+      <div class="node">Check columns and row counts</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane hi"><div class="lane-h"><b class="sn">3</b>Model in BigQuery</div>
+      <div class="node">Raw: partitioned by date</div>
+      <div class="node">Clean: labels, owners, projects</div>
+      <div class="node">Business: cost per app, team, env</div>
+      <div class="node ok">Check: model total = bill total</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">4</b>Use</div>
+      <div class="node">Looker Studio executive dashboards</div>
+      <div class="node">Right-sizing and unusual spend reports</div>
+      <div class="node">Budgets and alerts</div>
+    </div>
+  </div>
+  <div class="foundation">
+    <div><b>Build</b> Terraform, CI/CD, code review</div>
+    <div><b>Secure</b> Least-privilege IAM, Shared VPC</div>
+    <div><b>AI</b> Vertex AI, Gemini, RAG on GKE</div>
+  </div>
+  <div class="outcomes">
+    <div><b>Cost per app and team</b><span>every cost line has an owner</span></div>
+    <div><b>Right-sizing</b><span>found from usage vs size</span></div>
+    <div><b>Early alerts</b><span>no surprises at month end</span></div>
+    <div><b>Used by leaders</b><span>one dashboard for decisions</span></div>
+  </div>
+  <div class="callout"><b>Hard part:</b> labels were different in every project, so costs had no owner. <b>What I did:</b> fixed the labels in Terraform and joined the bill to the app list. <b>For you:</b> the same raw, clean, business layers, plus checks against the source.</div>
+  <footer></footer>
+</section>
+
+<!-- 5b QIDDIYA UNIFIED DATA PLATFORM -->
+<section class="slide">
+  <header><div class="kicker">Project 01 | Qiddiya unified data platform</div><h2>How I built one data platform for the whole company, in 7 steps</h2></header>
+  <div class="road">
+    <div class="road-line"><i></i></div>
+    <div class="rs"><em>1</em><b>Know the data</b><span>List every source, its owner and how fresh it must be</span><div class="bp">One owner per source</div></div>
+    <div class="rs"><em>2</em><b>Land it raw</b><span>Copy as-is into Cloud Storage and BigQuery raw. Never edit.</span><div class="bp">Raw is the audit copy</div></div>
+    <div class="rs"><em>3</em><b>Clean it</b><span>Fix types, names, dates and duplicates. Bad rows go aside.</span><div class="bp">Quality checks on load</div></div>
+    <div class="rs"><em>4</em><b>Model it</b><span>Business tables with one definition for each number</span><div class="bp">Define a KPI only once</div></div>
+    <div class="rs"><em>5</em><b>Protect it</b><span>Access by group, masked columns, audit logs, catalogue</span><div class="bp">Least access by default</div></div>
+    <div class="rs"><em>6</em><b>Serve it</b><span>Dashboards for leaders, APIs for apps, data for AI (RAG)</span><div class="bp">Same data for everyone</div></div>
+    <div class="rs"><em>7</em><b>Run it</b><span>Terraform, CI/CD, monitoring, cost alerts, runbooks</span><div class="bp">Everything as code</div></div>
+  </div>
+  <div class="udp">
+    <div class="udp-col">
+      <div class="udp-h">Many sources</div>
+      <div class="chip-s">Cloud billing</div><div class="chip-s">Asset inventory</div><div class="chip-s">Monitoring</div><div class="chip-s">App catalogue</div><div class="chip-s">Documents</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="udp-core">
+      <div class="udp-h light">One platform on Google Cloud</div>
+      <div class="medal">
+        <div class="md raw"><b>Raw</b><span>exact copy</span></div>
+        <div class="md std"><b>Clean</b><span>checked</span></div>
+        <div class="md cur"><b>Business</b><span>trusted</span></div>
+      </div>
+      <div class="gov">Catalogue, lineage, IAM, column tags, audit logs</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="udp-col">
+      <div class="udp-h">Many users</div>
+      <div class="chip-s">Executive dashboards</div><div class="chip-s">Cost and right-sizing</div><div class="chip-s">AI assistant (RAG)</div><div class="chip-s">Teams and apps</div>
+    </div>
+    <div class="udp-res">
+      <div><b data-count="81">81</b><span>apps with owners</span></div>
+      <div><b>1</b><span>source of truth</span></div>
+      <div><b>3</b><span>data layers</span></div>
+    </div>
+  </div>
+  <div class="callout"><b>For you:</b> Customer 360 follows the same 7 steps. The only new part is step 4: matching customers into one golden record.</div>
+  <footer></footer>
+</section>
+
+<!-- 6 SAMI -->
+<section class="slide">
+  <header><div class="kicker">Project 02 | SAMI Advanced Electronics | 2020 to 2024</div><h2>National platforms: one shared model for many organisations</h2></header>
+  <div class="split">
+    <div>
+      <div class="card">
+        <h4>The problem and my role</h4>
+        <p>I was Solution Architect and Team Lead for government and enterprise clients. This included the <b>DGA National Digital Transformation Platform</b> and four ministries. My teams had 5 to 15 engineers.</p>
+        <h4>What I did, step by step</h4>
+        <ol class="nums">
+          <li>Wrote the designs: HLD, LLD, decision records and interface documents</li>
+          <li>Designed the APIs (REST, OpenAPI) and event-based integration</li>
+          <li>Set performance, availability and recovery targets</li>
+          <li>Built security that meets NCA rules for sensitive data</li>
+          <li>Ran architecture review boards with all teams</li>
+        </ol>
+      </div>
+      <div class="stats three">
+        <div class="stat"><b><span data-count="50">50</span>+</b><span>agencies onboarded</span></div>
+        <div class="stat"><b data-count="4">4</b><span>ministries</span></div>
+        <div class="stat"><b>2022</b><span>Minister's recognition</span></div>
+      </div>
+    </div>
+    <div class="hub">
+      <div class="orbit"></div>
+      <div class="hub-c">Shared data and integration layer<small>same entities, clear owners, full audit</small></div>
+      <div class="sp s1">Agency A</div><div class="sp s2">Agency B</div><div class="sp s3">Agency C</div>
+      <div class="sp s4">Ministry systems</div><div class="sp s5">Citizen services</div><div class="sp s6">Old on-prem systems</div>
+      <div class="hub-note"><b>For you:</b> the hardest part of a golden record is the same. Everyone must agree on one customer model and on which system owns each field.</div>
+    </div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 7 CONTACT CENTRE -->
+<section class="slide">
+  <header><div class="kicker">Project 03 | Smart contact centre with AI agents | 2026 to now</div><h2>Voice and chat AI agents for many customers, data kept in Saudi Arabia</h2></header>
+  <div class="flow tight">
+    <div class="lane"><div class="lane-h"><b class="sn">1</b>Customer contacts us</div>
+      <div class="node">Phone call</div>
+      <div class="node">Mobile app and web chat</div>
+      <div class="node">Outbound campaigns</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane hi"><div class="lane-h"><b class="sn">2</b>AI agent answers</div>
+      <div class="node">Speech to text, AI agent, text to speech</div>
+      <div class="node">Agent uses tools (APIs) in a workflow</div>
+      <div class="node">Finds answers in the knowledge base (RAG)</div>
+      <div class="node">Guardrails block unsafe answers</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">3</b>Connect to systems</div>
+      <div class="node">Find the customer and their history</div>
+      <div class="node">Hand over to a human when needed</div>
+      <div class="node">Back-end APIs over a private, encrypted link</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">4</b>Measure</div>
+      <div class="node">Logs of every conversation and tool call</div>
+      <div class="node">KPI dashboards (CSAT, first-call fix)</div>
+      <div class="node">Cost per customer</div>
+    </div>
+  </div>
+  <div class="cols-3 small">
+    <div class="card"><h4>My role</h4><p>Principal Cloud and AI Infrastructure Architect. I own the cloud and AI design, the government links, cloud costs and Saudi compliance.</p></div>
+    <div class="card"><h4>What I built</h4><ul class="ticks"><li>Each customer fully separated, no keys in code</li><li>Private VPN and API gateway with mutual TLS</li><li>Moved the platform data into Saudi Arabia</li></ul></div>
+    <div class="card"><h4>For you</h4><p>A contact centre agent must find the customer and see their history in seconds. Your Dynamics 365 agents need exactly this.</p></div>
+  </div>
+  <div class="outcomes">
+    <div><b>1 platform, 3 channels</b><span>voice, app and web</span></div>
+    <div><b>Data stays in KSA</b><span>move completed</span></div>
+    <div><b>Customers separated</b><span>own data and keys</span></div>
+    <div><b>Cost per customer</b><span>from real usage</span></div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 8 CONTACT CENTRE DASHBOARD -->
+<section class="slide">
+  <header><div class="kicker">Project 03 | Live operations dashboard</div><h2>What managers see: AI and human agents on one screen</h2></header>
+  <div class="dash">
+    <div class="dash-bar"><span class="livep"><i class="live"></i>LIVE</span><span>Contact centre overview</span><span class="dim">Last 30 days</span></div>
+    <div class="dash-top">
+      <div class="dk"><span>Conversations</span><b data-count="12480">12,480</b><em class="up">▲ 8.2%</em></div>
+      <div class="dk"><span>Customer rating</span><b>4.3 / 5</b><em class="up">▲ 0.2</em></div>
+      <div class="dk"><span>Solved first time</span><b><span data-count="78">78</span>%</b><em class="up">▲ 5 pts</em></div>
+      <div class="dk"><span>Sent to a human</span><b><span data-count="14">14</span>%</b><em class="up">▼ 3 pts</em></div>
+      <div class="dk"><span>First reply</span><b>1.9 s</b><em class="up">faster</em></div>
+    </div>
+    <div class="dash-grid">
+      <div class="panel">
+        <h5>Conversations per day</h5>
+        <svg viewBox="0 0 400 150" class="chart" preserveAspectRatio="none">
+          <defs><linearGradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0E8C8C" stop-opacity=".35"/><stop offset="1" stop-color="#0E8C8C" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#2A3B55"><line x1="0" y1="30" x2="400" y2="30"/><line x1="0" y1="70" x2="400" y2="70"/><line x1="0" y1="110" x2="400" y2="110"/></g>
+          <path class="area" d="M0,120 C30,110 50,90 80,95 C110,100 130,60 160,70 C190,80 210,40 240,45 C270,50 290,30 320,38 C350,46 370,25 400,20 L400,150 L0,150Z" fill="url(#ga)"/>
+          <path class="draw" pathLength="1" d="M0,120 C30,110 50,90 80,95 C110,100 130,60 160,70 C190,80 210,40 240,45 C270,50 290,30 320,38 C350,46 370,25 400,20" fill="none" stroke="#2BC4B9" stroke-width="3"/>
+          <path class="draw d2" pathLength="1" d="M0,135 C40,130 70,120 100,125 C130,128 160,110 200,112 C240,114 270,100 300,104 C330,108 360,95 400,92" fill="none" stroke="#7EA6E8" stroke-width="2.5"/>
+        </svg>
+        <div class="legend"><i class="c1"></i>Voice <i class="c2"></i>Chat</div>
+      </div>
+      <div class="panel">
+        <h5>How customers feel</h5>
+        <div class="stack"><i style="--w:52%;background:#18A058"></i><i style="--w:31%;background:#9AA6B8"></i><i style="--w:17%;background:#E5484D"></i></div>
+        <div class="rows">
+          <div><span>Happy</span><b>52%</b></div><div><span>Neutral</span><b>31%</b></div><div><span>Unhappy</span><b>17%</b></div>
+        </div>
+        <h5 class="mt">Channel</h5>
+        <div class="bar"><span>Voice</span><i style="--w:61%"></i><b>61%</b></div>
+        <div class="bar"><span>App</span><i style="--w:27%"></i><b>27%</b></div>
+        <div class="bar"><span>Web</span><i style="--w:12%"></i><b>12%</b></div>
+      </div>
+      <div class="panel">
+        <h5>Quality and safety</h5>
+        <div class="ring-row">
+          <div class="ring" style="--to:92"><b>92%</b><span>Answers from approved knowledge</span></div>
+          <div class="ring" style="--to:97"><b>97%</b><span>Understood the request</span></div>
+        </div>
+        <div class="rows">
+          <div><span>Blocked by guardrails</span><b>0.6%</b></div>
+          <div><span>"I don't know" answers</span><b>5.1%</b></div>
+          <div><span>Reviews done on time</span><b>98%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="illus">Sample data made for this portfolio. It shows the dashboard design I build, not real client numbers.</div>
+  <footer></footer>
+</section>
+
+<!-- 9 MICROSOFT -->
+<section class="slide">
+  <header><div class="kicker">Project 04 | Microsoft | many enterprise customers</div><h2>Microsoft cloud, identity, reports and CRM</h2></header>
+  <div class="split">
+    <div>
+      <div class="card">
+        <h4>The problem and my role</h4>
+        <p>Cloud Architecture Consultant with Microsoft (2017 to 2018). I helped enterprise customers in different sectors, including financial services, move from their own servers to the cloud. I still work with Microsoft tools today.</p>
+        <h4>What I delivered</h4>
+        <ul class="ticks">
+          <li>Azure designs, hybrid network and migration plans with costs</li>
+          <li>Identity with Azure AD (Entra ID): single sign-on, MFA, Zero Trust</li>
+          <li>Office 365, Exchange Online and SharePoint migrations</li>
+          <li>Power BI reports with row-level security, embedded in apps</li>
+          <li>Dynamics 365 Contact Center design, Power Apps and Power Automate</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Recent example: Power Platform portal</h4>
+        <p>Staff fill a Power Apps form. Data goes to a locked SharePoint list through a Power Automate flow. Staff never touch the data directly. Admins get dashboard views.</p>
+      </div>
+    </div>
+    <div class="ms">
+      <div class="ms-grid">
+        <div class="ms-t"><b>Identity</b><span>Entra ID, single sign-on, MFA, Conditional Access</span></div>
+        <div class="ms-t"><b>Cloud</b><span>Azure IaaS and PaaS, hybrid network</span></div>
+        <div class="ms-t"><b>Work tools</b><span>Microsoft 365, Exchange, SharePoint</span></div>
+        <div class="ms-t"><b>Reports</b><span>Power BI, row and column security, embedded</span></div>
+        <div class="ms-t"><b>CRM</b><span>Dynamics 365, Contact Center, Dataverse</span></div>
+        <div class="ms-t"><b>Low-code</b><span>Power Apps, Power Automate</span></div>
+      </div>
+      <div class="callout"><b>For you:</b> I know both sides. We clean the data in BigQuery, then show it in <b>Power BI</b> and <b>Dynamics 365</b>. Each agent signs in with their own account, so they only see the rows they are allowed to see.</div>
+    </div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 10 EXEC DASHBOARDS -->
+<section class="slide">
+  <header><div class="kicker">All projects | Executive dashboards</div><h2>Dashboards I build that read from many sources</h2></header>
+  <div class="flow tight">
+    <div class="lane"><div class="lane-h"><b class="sn">1</b>Sources</div>
+      <div class="node">Cloud billing APIs (multi-cloud)</div>
+      <div class="node">Platform usage APIs</div>
+      <div class="node">Resource tags and asset lists</div>
+      <div class="node">Contracts and credits</div>
+      <div class="node">HR, IT and Microsoft 365</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane hi"><div class="lane-h"><b class="sn">2</b>Pipeline</div>
+      <div class="node">Python collectors, read-only access</div>
+      <div class="node">Clean: currency, dates, owners</div>
+      <div class="node">Split shared costs by clear rules</div>
+      <div class="node ok">Check against the invoice. Stop if wrong.</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">3</b>Model</div>
+      <div class="node">BigQuery or workbook model</div>
+      <div class="node">Each measure defined once</div>
+      <div class="node">Every number can be traced</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">4</b>Leaders</div>
+      <div class="node">Arabic and English dashboards</div>
+      <div class="node">Looker Studio, Power BI, SharePoint</div>
+      <div class="node">Monthly management pack</div>
+    </div>
+  </div>
+  <div class="mini-dash">
+    <div class="md-k"><span>Monthly cloud spend</span><b>SAR <span data-count="1.24" data-dec="2">1.24</span>M</b><em>✓ matches invoice</em></div>
+    <div class="md-bars">
+      <h5>Cost by business unit</h5>
+      <div class="bar"><span>Unit A</span><i style="--w:72%"></i><b>38%</b></div>
+      <div class="bar"><span>Unit B</span><i style="--w:49%"></i><b>26%</b></div>
+      <div class="bar"><span>Unit C</span><i style="--w:34%"></i><b>18%</b></div>
+      <div class="bar"><span>Shared</span><i style="--w:34%"></i><b>18%</b></div>
+    </div>
+    <div class="md-donut"><div class="donut"></div><div class="dl"><span><i class="d1"></i>Compute</span><span><i class="d2"></i>Data</span><span><i class="d3"></i>AI and GPU</span><span><i class="d4"></i>Network</span></div></div>
+    <div class="md-check"><h5>Trust checks</h5><div>✓ Model vs invoice under 0.5%</div><div>✓ Every cost has an owner</div><div>✓ Shows source and refresh time</div></div>
+  </div>
+  <div class="illus">Sample numbers. My rule: no number goes to a leader until it matches the source.</div>
+  <footer></footer>
+</section>
+
+<!-- 11 DATA ENGINEERING -->
+<section class="slide">
+  <header><div class="kicker">All projects | Data engineering on Google Cloud</div><h2>How I run Dataflow, Airflow, dbt and BigQuery in production</h2></header>
+  <div class="dag">
+    <div class="step"><em>1</em><b>Land</b><span>Files land in Cloud Storage. Check columns and counts.</span></div>
+    <div class="dag-a"></div>
+    <div class="step df"><em>2</em><b>Dataflow</b><span>Clean, standardise, remove duplicates. Bad rows go aside.</span></div>
+    <div class="dag-a"></div>
+    <div class="step bq"><em>3</em><b>BigQuery raw</b><span>Exact copy, never edited, partitioned by date.</span></div>
+    <div class="dag-a"></div>
+    <div class="step dbt"><em>4</em><b>dbt models</b><span>SQL models: staging, then business tables.</span></div>
+    <div class="dag-a"></div>
+    <div class="step gate"><em>5</em><b>Quality gate</b><span>Tests and source checks. If they fail, stop and alert.</span></div>
+    <div class="dag-a"></div>
+    <div class="step"><em>6</em><b>Publish</b><span>Refresh Power BI and send data to the CRM.</span></div>
+  </div>
+  <div class="af"><span class="pulse"></span>Airflow (Cloud Composer) runs every step in order, retries failures, re-runs past days and sends alerts</div>
+  <div class="cols-4">
+    <div class="card"><h4>Dataflow</h4><ul class="ticks"><li>Batch and streaming</li><li>Bad rows kept for review</li><li>Monitor and re-process</li></ul></div>
+    <div class="card"><h4>Airflow</h4><ul class="ticks"><li>Safe to run twice</li><li>Automatic retries</li><li>Re-run any past date</li></ul></div>
+    <div class="card"><h4>dbt</h4><ul class="ticks"><li>Load only new data</li><li>Tests on every model</li><li>Docs, lineage, CI on every change</li></ul></div>
+    <div class="card"><h4>BigQuery</h4><ul class="ticks"><li>Partitions and clusters</li><li>Access per dataset and column</li><li>Cost limits per query</li></ul></div>
+  </div>
+  <div class="code-row">
+<pre class="code"><span class="cm"># Airflow DAG: nothing is published before checks pass</span>
+ingest &gt;&gt; dataflow_standardise &gt;&gt; dbt_run_staging
+dbt_run_staging &gt;&gt; dbt_test_critical   <span class="cm"># fail = stop + alert</span>
+dbt_test_critical &gt;&gt; match_identities &gt;&gt; dbt_run_marts
+dbt_run_marts &gt;&gt; reconcile_vs_source &gt;&gt; [refresh_powerbi, sync_d365]</pre>
+<pre class="code"><span class="cm">-- dbt: business table, loads only new rows</span>
+{{ config(materialized='incremental', unique_key='customer_sk',
+          partition_by={'field': 'updated_date', 'data_type': 'date'},
+          cluster_by=['customer_sk']) }}
+select * from {{ ref('int_customer_golden') }}
+{% if is_incremental() %}
+where updated_date &gt;= (select max(updated_date) from {{ this }})
+{% endif %}</pre>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 12 C360 ARCH -->
+<section class="slide">
+  <header><div class="kicker">Customer 360 | My proposed design</div><h2>Customer 360 on Google Cloud, with all data in Saudi Arabia</h2></header>
+  <div class="flow tight">
+    <div class="lane"><div class="lane-h"><b class="sn">1</b>Sources</div>
+      <div class="node">Oracle data warehouse (OCI)</div>
+      <div class="node">GCP data lake</div>
+      <div class="node">Dynamics 365</div>
+      <div class="node">Policy and claims systems</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">2</b>Bring in</div>
+      <div class="node">Datastream: only changes, private link</div>
+      <div class="node">Dataflow: batch or streaming</div>
+      <div class="node">Cloud Storage landing</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane hi wide"><div class="lane-h"><b class="sn">3</b>BigQuery in the Saudi region</div>
+      <div class="layers">
+        <div class="ly raw"><b>Raw</b><span>exact copy, never edited</span></div>
+        <div class="ly std"><b>Clean</b><span>+966 mobiles, ID and Iqama, Hijri dates, Arabic names</span></div>
+        <div class="ly cur"><b>Business</b><span>golden record, policy, claim, interaction</span></div>
+      </div>
+      <div class="node restricted">Locked zone for medical claims</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="lane"><div class="lane-h"><b class="sn">4</b>Use</div>
+      <div class="node">Power BI with row security</div>
+      <div class="node">360 view inside Dynamics 365</div>
+      <div class="node">BigQuery ML and Vertex AI</div>
+    </div>
+  </div>
+  <div class="foundation">
+    <div><b>Run</b> Cloud Composer (Airflow)</div>
+    <div><b>Transform</b> dbt with tests and source checks</div>
+    <div><b>Secure</b> IAM, own keys, column tags, audit logs</div>
+  </div>
+  <div class="entities">
+    <div class="en-h">The customer model</div>
+    <div class="en gold"><b>Customer</b><span>golden record</span></div><i></i>
+    <div class="en"><b>Policy</b><span>holder and insured</span></div><i></i>
+    <div class="en"><b>Claim</b><span>first notice to payment</span></div><i></i>
+    <div class="en"><b>Provider</b><span>hospital, garage</span></div>
+    <div class="en side c2"><b>Interaction</b><span>calls, cases, D365</span></div>
+    <div class="en side c4"><b>Payment</b><span>premium, refund</span></div>
+    <div class="en side c6"><b>Cross-reference</b><span>golden ID to source IDs</span></div>
+  </div>
+  <div class="illus">First view based on the job description. I will confirm it with the source owners in the first weeks.</div>
+  <footer></footer>
+</section>
+
+<!-- 13 IDENTITY -->
+<section class="slide">
+  <header><div class="kicker">Customer 360 | The golden record</div><h2>Finding the same customer in every system, in 5 steps</h2></header>
+  <div class="split">
+    <div class="funnel">
+      <div class="fn f1"><b>Step 1: Clean</b><span>mobile to +966, check ID and Iqama, name forms (Mohammed, Muhammad)</span></div>
+      <div class="fn f2"><b>Step 2: Exact match</b><span>same National ID or Iqama, same CR number, policy + birth date</span></div>
+      <div class="fn f3"><b>Step 3: Similarity score</b><span>name, birth date, mobile, email and city</span></div>
+      <div class="fn f4"><b>Step 4: Decide</b><span>merge, send to a person, or keep apart</span></div>
+      <div class="fn f5"><b>Step 5: Best value + links</b><span>keep every source ID, so we can trace and undo</span></div>
+    </div>
+    <div>
+      <div class="demo">
+        <div class="demo-h">Example</div>
+        <div class="rec r1"><b>CRM</b>Mohammed Al-Otaibi · 0551234567</div>
+        <div class="rec r2"><b>Policy</b>Muhammad Alotaibi · +966551234567</div>
+        <div class="rec r3"><b>Claims</b>محمد العتيبي · ID 10xxxxxxx</div>
+        <div class="merge">Score 0.96 → one golden record</div>
+      </div>
+      <div class="thresh">
+        <div class="th a"><b>0.92+</b><span>Merge</span></div>
+        <div class="th b"><b>0.75 to 0.92</b><span>Person checks</span></div>
+        <div class="th c"><b>Below 0.75</b><span>Keep apart</span></div>
+      </div>
+      <div class="illus left">Example values and names. The business approves the real limits after testing.</div>
+      <div class="callout"><b>My rule:</b> the business approves the matching rules, not the engineers. Never merge two different people. In insurance that is a privacy incident.</div>
+    </div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 14 SECURITY -->
+<section class="slide">
+  <header><div class="kicker">Customer 360 | Security from day one</div><h2>PDPL, Saudi data residency and least access, in 6 layers</h2></header>
+  <div class="shield">
+    <div class="ring-l l1"><em>1</em><b>Location</b><span>Data can only be created in the Saudi region</span></div>
+    <div class="ring-l l2"><em>2</em><b>Perimeter</b><span>VPC Service Controls, private links only</span></div>
+    <div class="ring-l l3"><em>3</em><b>Encryption</b><span>Client-owned keys, TLS on every link</span></div>
+    <div class="ring-l l4"><em>4</em><b>Access</b><span>Groups, one service account per pipeline, masked columns</span></div>
+    <div class="ring-l l5"><em>5</em><b>Reports</b><span>Power BI row and column security</span></div>
+    <div class="ring-l l6"><em>6</em><b>Proof</b><span>Audit logs that cannot be changed, with alerts</span></div>
+  </div>
+  <div class="cols-3 small">
+    <div class="card"><h4>PDPL</h4><p>Bring only the fields we need. Keep them only as long as allowed. When a customer asks for their data, the cross-reference table finds every record.</p></div>
+    <div class="card"><h4>Sensitive data</h4><p>National ID, mobile, IBAN and medical data are tagged and masked. Medical claims sit in a separate locked project.</p></div>
+    <div class="card"><h4>I have done this</h4><p>I mapped 100 controls to PDPL, NCA ECC, SDAIA, ISO 27001 and SOC 2 this year.</p></div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 15 PLAN -->
+<section class="slide">
+  <header><div class="kicker">Customer 360 | Delivery plan</div><h2>13 weeks: one full flow first, then two releases</h2></header>
+  <div class="gantt">
+    <div class="g-head"><span></span><div class="weeks"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i></div></div>
+    <div class="g-row"><span>1. Discovery (on site)</span><div class="track"><b class="b1" style="--s:0;--w:3">Access, data review, model, matching rules, design sign-off</b></div></div>
+    <div class="g-row"><span>2. First full flow</span><div class="track"><b class="b2" style="--s:1;--w:3">1 source to golden record to 1 dashboard</b></div></div>
+    <div class="g-row"><span>3. Release 1</span><div class="track"><b class="b3" style="--s:3;--w:4">All sources loaded, exact matching, customer and policy</b></div></div>
+    <div class="g-row"><span>4. Release 2</span><div class="track"><b class="b4" style="--s:7;--w:4">Similarity matching, claims, locked zone, Dynamics 365</b></div></div>
+    <div class="g-row"><span>5. Test and hand over</span><div class="track"><b class="b5" style="--s:11;--w:2">User tests, speed, security, runbooks</b></div></div>
+    <div class="g-row"><span>Detailed design</span><div class="track"><b class="b6" style="--s:2;--w:11">Updated every 2-week sprint</b></div></div>
+    <div class="miles"><div style="--s:3">◆ Design approved</div><div style="--s:7">◆ Release 1</div><div style="--s:11">◆ Release 2</div><div style="--s:13">◆ Support</div></div>
+  </div>
+  <div class="cols-4">
+    <div class="card"><h4>Match rate</h4><p>% of customers with a golden record</p></div>
+    <div class="card"><h4>Duplicates</h4><p>how many before and after</p></div>
+    <div class="card"><h4>Matches source</h4><p>difference vs source system: target 0</p></div>
+    <div class="card"><h4>Usage</h4><p>agents using the 360 view every day</p></div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 16 TEAM -->
+<section class="slide">
+  <header><div class="kicker">Customer 360 | Leading the team</div><h2>Leading 6 to 8 engineers and still writing code</h2></header>
+  <div class="split">
+    <div class="org">
+      <div class="o-lead">Technical Lead and Data Architect<small>design, hardest code, daily reviews</small></div>
+      <div class="o-row">
+        <div class="o-n">Data engineers (2 to 3)<small>loading, Dataflow, Airflow</small></div>
+        <div class="o-n">Analytics engineers (2)<small>dbt, customer model, matching</small></div>
+        <div class="o-n">Power BI developer<small>reports, row security</small></div>
+        <div class="o-n">Dynamics 365 engineer<small>360 view, data sync</small></div>
+        <div class="o-n">Tester (shared)<small>tests, user tests</small></div>
+      </div>
+      <div class="o-biz">Business owners for customer, policy and claims approve the rules</div>
+    </div>
+    <div>
+      <div class="card">
+        <h4>How I run the team</h4>
+        <ol class="nums">
+          <li>One owner for each area, 15-minute stand-up every day</li>
+          <li>Week 1: naming rules, dbt template, review checklist</li>
+          <li>No code goes live without a review and passing tests</li>
+          <li>I take the riskiest part myself, usually matching</li>
+          <li>One-page weekly update: done, next, risks, decisions</li>
+          <li>By week 13 the team can run it without me</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>"Done" means</h4>
+        <div class="dod">
+          <span>✓ Code reviewed</span><span>✓ dbt tests pass</span><span>✓ Matches source</span>
+          <span>✓ Docs updated</span><span>✓ Access rules set</span><span>✓ Runbook written</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 17 EVIDENCE -->
+<section class="slide">
+  <header><div class="kicker">Evidence</div><h2>Certificates you can check, and awards</h2></header>
+  <div class="evid">
+    <figure class="cert"><img src="cert_genai.jpg" alt="Google Cloud Certified Generative AI Leader"><figcaption><b>Google Cloud Certified: Generative AI Leader</b><span>Issued Nov 2025, valid to Nov 2028</span></figcaption></figure>
+    <figure class="cert"><img src="cert_agile.jpg" alt="Google Agile Project Management certificate"><figcaption><b>Google Agile Project Management</b><span>Check: coursera.org/verify/ZMFWYA505EGD</span></figcaption></figure>
+    <div class="awards">
+      <div class="aw"><b>Google Cloud Professional Cloud Architect</b><span>Google Cloud</span></div>
+      <div class="aw"><b>Google Project Management Professional Certificate</b><span>Check: coursera.org/verify/professional-cert/ASFNMBGD2RTA</span></div>
+      <div class="aw gold"><b>Recognised by the Minister of Hajj and Umrah</b><span>Digital transformation of Hajj and Umrah services, 2022</span></div>
+      <div class="aw gold"><b>Recognised by Princess Nourah University</b><span>AI and machine learning cloud platforms, 2023</span></div>
+      <div class="aw"><b>Microsoft MCSE and MCSA</b><span>Cloud Platform and Office 365</span></div>
+    </div>
+  </div>
+  <footer></footer>
+</section>
+
+<!-- 18 CLOSE -->
+<section class="slide close">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="close-in">
+    <div class="kicker">Thank you</div>
+    <h2>What I bring to your Customer 360</h2>
+    <div class="vals">
+      <div><em>01</em><b>Speed</b><span>Discovery and design in the first 3 weeks. I have built this kind of platform many times.</span></div>
+      <div><em>02</em><b>Trust</b><span>Numbers that match the source. Security and PDPL built in from day one.</span></div>
+      <div><em>03</em><b>Handover</b><span>Clean code, tests and documents, so your team can run it after me.</span></div>
+      <div><em>04</em><b>Ready for AI</b><span>With a golden record in place, renewal prediction and call summaries come fast.</span></div>
+    </div>
+    <div class="q">Questions?<span>engineer.taha.shaban@gmail.com | linkedin.com/in/taha-abu-alata</span></div>
+  </div>
+</section>
+
+</main>
+
+<div id="controls" class="no-print">
+  <button id="prev" title="Previous">‹</button>
+  <span id="count">1 / 19</span>
+  <button id="next" title="Next">›</button>
+  <button id="fs" title="Full screen (F)">⤢</button>
+  <a id="pdf" href="Taha_Abu_Alata_Portfolio_C360.pdf" download title="Download PDF">PDF</a>
+</div>
+<script src="deck.js"></script>
+</body>
+</html>
+

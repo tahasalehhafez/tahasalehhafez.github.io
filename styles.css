@@ -138,6 +138,9 @@ img {
 
 .hero-visual {
   animation: rise 0.9s var(--ease) both;
+  width: 100%;
+  max-width: 340px;
+  justify-self: center;
 }
 
 .photo-wrap {
